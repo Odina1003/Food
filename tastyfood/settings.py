@@ -117,15 +117,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
-STATIC_ROOL = ''
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
-]
-if not DEBUG:
-    # Static files are built with "python manage.py collectstatic" to "dist" directory and then served by nginx
-    STATIC_ROOT = os.path.join(BASE_DIR, 'dist')
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
+# STATIC_ROOL = ''
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, '/static/')]
+# if not DEBUG:
+#     # Static files are built with "python manage.py collectstatic" to "dist" directory and then served by nginx
+#     STATIC_ROOT = os.path.join(BASE_DIR, 'dist')
+# # Default primary key field type
+# # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
