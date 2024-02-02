@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import *
 
-# Create your views here.
 def index(request):
     return render(request=request, template_name='index.html', context={})
 
@@ -12,13 +12,14 @@ def contact(request):
     return render(request=request, template_name='contact.html', context={})
 
 def menu(request):
-    return render(request=request, template_name='menu.html', context={})
+    breakfast = Breakfast.objects.all()
+    lunch = Lunch.objects.all()
+    dinner = Dinner.objects.all()
+    desert = Desert.objects.all()
+    return render(request=request, template_name='menu.html', context={'breakfast':breakfast, 'lunch':lunch, 'dinner':dinner, 'desert':desert})
 
 def news(request):
     return render(request=request, template_name='news.html', context={})
 
 def news_detail(request):
-    return render(request=request, template_name='news_detail.html', context={})
-
-def home(request):
-    return HttpResponse('This is home page')
+    return render(request=request, template_name='news-detail.html', context={})

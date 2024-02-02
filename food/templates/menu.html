@@ -8,7 +8,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Crispy Kitchen Menu</title>
+        <title>Yummy Delights Menu</title>
 
         <!-- CSS FILES -->      
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +24,7 @@
         
 <!--
 
-Tooplate 2129 Crispy Kitchen
+Tooplate 2129 Yummy Delights
 
 https://www.tooplate.com/view/2129-crispy-kitchen
 
@@ -40,7 +40,7 @@ https://www.tooplate.com/view/2129-crispy-kitchen
                 </button>
                 
                 <a class="navbar-brand" href="{%url 'index'%}">
-                    Crispy Kitchen
+                    Yummy Delights
                 </a>
 
                 <div class="d-lg-none">
@@ -112,14 +112,6 @@ https://www.tooplate.com/view/2129-crispy-kitchen
                                     <div class="d-flex flex-wrap align-items-center w-100 mt-2">
                                         <h6 class="reviews-text mb-0 me-3">4.4/5</h6>
 
-                                        <div class="reviews-stars">
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star reviews-icon"></i>
-                                        </div>
-
                                         <p class="reviews-text mb-0 ms-4">128 Reviews</p>
                                     </div>
                                 </div>
@@ -137,14 +129,6 @@ https://www.tooplate.com/view/2129-crispy-kitchen
 
                                     <div class="d-flex flex-wrap align-items-center w-100 mt-2">
                                         <h6 class="reviews-text mb-0 me-3">3/5</h6>
-
-                                        <div class="reviews-stars">
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star reviews-icon"></i>
-                                            <i class="bi-star reviews-icon"></i>
-                                        </div>
 
                                         <p class="reviews-text mb-0 ms-4">64 Reviews</p>
                                     </div>
@@ -166,19 +150,34 @@ https://www.tooplate.com/view/2129-crispy-kitchen
                                     <div class="d-flex flex-wrap align-items-center w-100 mt-2">
                                         <h6 class="reviews-text mb-0 me-3">3/5</h6>
 
-                                        <div class="reviews-stars">
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star reviews-icon"></i>
-                                            <i class="bi-star reviews-icon"></i>
-                                        </div>
-
                                         <p class="reviews-text mb-0 ms-4">32 Reviews</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        {% for menu in breakfast%}
+
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="menu-thumb">
+                                <img src="/media/{{menu.image}}" class="img-fluid menu-image" alt="">
+
+                                <div class="menu-info d-flex flex-wrap align-items-center">
+                                    <h4 class="mb-0">{{menu.name}}</h4>
+
+                                    <span class="price-tag bg-white shadow-lg ms-4"><small>$</small>{{menu.price}}</span>
+
+                                    <del class="ms-4"><small>$</small>{{menu.del_price}}</del>
+
+                                    <div class="d-flex flex-wrap align-items-center w-100 mt-2">
+                                        <h6 class="reviews-text mb-0 me-3">{{menu.ball}}/5</h6>
+
+                                        <p class="reviews-text mb-0 ms-4">{{menu.review}} Reviews</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
 
                     </div>
                 </div>
@@ -206,14 +205,6 @@ https://www.tooplate.com/view/2129-crispy-kitchen
                                     <div class="d-flex flex-wrap align-items-center w-100 mt-2">
                                         <h6 class="reviews-text mb-0 me-3">4.2/5</h6>
 
-                                        <div class="reviews-stars">
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star reviews-icon"></i>
-                                        </div>
-
                                         <p class="reviews-text mb-0 ms-4">66 Reviews</p>
                                     </div>
                                 </div>
@@ -232,19 +223,34 @@ https://www.tooplate.com/view/2129-crispy-kitchen
                                     <div class="d-flex flex-wrap align-items-center w-100 mt-2">
                                         <h6 class="reviews-text mb-0 me-3">3/5</h6>
 
-                                        <div class="reviews-stars">
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star reviews-icon"></i>
-                                            <i class="bi-star reviews-icon"></i>
-                                        </div>
-
                                         <p class="reviews-text mb-0 ms-4">84 Reviews</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        {% for menu in lunch%}
+
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="menu-thumb">
+                                <img src="/media/{{menu.image}}" class="img-fluid menu-image" alt="">
+
+                                <div class="menu-info d-flex flex-wrap align-items-center">
+                                    <h4 class="mb-0">{{menu.name}}</h4>
+
+                                    <span class="price-tag bg-white shadow-lg ms-4"><small>$</small>{{menu.price}}</span>
+
+                                    <del class="ms-4"><small>$</small>{{menu.del_price}}</del>
+
+                                    <div class="d-flex flex-wrap align-items-center w-100 mt-2">
+                                        <h6 class="reviews-text mb-0 me-3">{{menu.ball}}/5</h6>
+
+                                        <p class="reviews-text mb-0 ms-4">{{menu.review}} Reviews</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
 
                     </div>
                 </div>
@@ -270,14 +276,6 @@ https://www.tooplate.com/view/2129-crispy-kitchen
                                     <div class="d-flex flex-wrap align-items-center w-100 mt-2">
                                         <h6 class="reviews-text mb-0 me-3">4.4/5</h6>
 
-                                        <div class="reviews-stars">
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star reviews-icon"></i>
-                                        </div>
-
                                         <p class="reviews-text mb-0 ms-4">102 Reviews</p>
                                     </div>
                                 </div>
@@ -295,14 +293,6 @@ https://www.tooplate.com/view/2129-crispy-kitchen
 
                                     <div class="d-flex flex-wrap align-items-center w-100 mt-2">
                                         <h6 class="reviews-text mb-0 me-3">3/5</h6>
-
-                                        <div class="reviews-stars">
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star reviews-icon"></i>
-                                            <i class="bi-star reviews-icon"></i>
-                                        </div>
 
                                         <p class="reviews-text mb-0 ms-4">56 Reviews</p>
                                     </div>
@@ -322,24 +312,73 @@ https://www.tooplate.com/view/2129-crispy-kitchen
                                     <div class="d-flex flex-wrap align-items-center w-100 mt-2">
                                         <h6 class="reviews-text mb-0 me-3">3/5</h6>
 
-                                        <div class="reviews-stars">
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star reviews-icon"></i>
-                                            <i class="bi-star reviews-icon"></i>
-                                        </div>
-
                                         <p class="reviews-text mb-0 ms-4">76 Reviews</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
+                        {% for menu in dinner%}
+
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="menu-thumb">
+                                <img src="/media/{{menu.image}}" class="img-fluid menu-image" alt="">
+
+                                <div class="menu-info d-flex flex-wrap align-items-center">
+                                    <h4 class="mb-0">{{menu.name}}</h4>
+
+                                    <span class="price-tag bg-white shadow-lg ms-4"><small>$</small>{{menu.price}}</span>
+
+                                    <del class="ms-4"><small>$</small>{{menu.del_price}}</del>
+
+                                    <div class="d-flex flex-wrap align-items-center w-100 mt-2">
+                                        <h6 class="reviews-text mb-0 me-3">{{menu.ball}}/5</h6>
+
+                                        <p class="reviews-text mb-0 ms-4">{{menu.review}} Reviews</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
                     </div>
                 </div>
             </section>
 
+            <section class="menu section-padding">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-12">
+                            <h2 class="mb-lg-5 mb-4">Desert</h2>
+                        </div>
+
+                        {% for menu in desert%}
+
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="menu-thumb">
+                                <img src="/media/{{menu.image}}" class="img-fluid menu-image" alt="">
+
+                                <div class="menu-info d-flex flex-wrap align-items-center">
+                                    <h4 class="mb-0">{{menu.name}}</h4>
+
+                                    <span class="price-tag bg-white shadow-lg ms-4"><small>$</small>{{menu.price}}</span>
+
+                                    <del class="ms-4"><small>$</small>{{menu.del_price}}</del>
+
+                                    <div class="d-flex flex-wrap align-items-center w-100 mt-2">
+                                        <h6 class="reviews-text mb-0 me-3">{{menu.ball}}/5</h6>
+
+                                        <p class="reviews-text mb-0 ms-4">{{menu.review}} Reviews</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </section>
         </main>
 
         <footer class="site-footer section-padding">
@@ -349,7 +388,7 @@ https://www.tooplate.com/view/2129-crispy-kitchen
                 <div class="row">
 
                     <div class="col-12">
-                        <h4 class="text-white mb-4 me-5">Crispy Kitchen</h4>
+                        <h4 class="text-white mb-4 me-5">Yummy Delights</h4>
                     </div>
 
                     <div class="col-lg-4 col-md-7 col-xs-12 tooplate-mt30">
@@ -383,7 +422,7 @@ https://www.tooplate.com/view/2129-crispy-kitchen
                             <li><a href="#" class="social-icon-link bi-youtube"></a></li>
                         </ul>
                     
-                        <p class="copyright-text tooplate-mt60">Copyright © 2022 Crispy Kitchen Co., Ltd.
+                        <p class="copyright-text tooplate-mt60">Copyright © 2024 Yummy Delights Co., Ltd.
                         <br>Design: <a rel="nofollow" href="https://www.tooplate.com/" target="_blank">Tooplate</a></p>
                         
                     </div>

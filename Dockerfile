@@ -23,6 +23,8 @@ COPY . .
 EXPOSE 8000
 
 RUN pip install uvicorn
+    
+RUN pip install Pillow
 
 CMD python manage.py collectstatic  --noinput && \
     python manage.py makemigrations && \
